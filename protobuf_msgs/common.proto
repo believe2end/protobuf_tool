@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+//----------信息
+message DevInfoMessage{
+  string version = 1;
+  uint32 cur_time = 3;
+}
+
+//----------应答
+message AckMessage{
+  uint32 code = 1;
+  string msg = 2;
+}
