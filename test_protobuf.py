@@ -62,7 +62,9 @@ def get_all_attr_value(message):
 
 def set_attr(message, kv=[]):
     for field_name,value  in kv:
-        if isinstance(getattr(message, field_name), int):
+        if isinstance(getattr(message, field_name), bool):
+            value = True if value.upper() == "TRUE" else False
+        elif isinstance(getattr(message, field_name), int):
             value = int(value)
         setattr(message, field_name, value)
 
